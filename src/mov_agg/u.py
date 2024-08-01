@@ -11,8 +11,8 @@ def merge(load_dt="20240724"):
        'repNationCd', #한국외국영화 유무
        ]
     df = read_df[cols]
-    # 울버린 만조회
-    df_where = df[df['movieCd'] == '20247781'].copy() #날짜조건 load_dt 인자 받기
+    # 울버린만 조회
+    df_where = df[(df['movieCd'] == '20247781') & (df['load_dt'] == int(load_dt))].copy() #날짜조건 load_dt 인자받기
     print(df_where)
     print(df_where.dtypes)
 
